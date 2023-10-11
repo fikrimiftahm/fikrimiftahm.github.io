@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "datepicker.css";
+
+@font-face {
+    font-family: 'Qualy-Bold';
+    src: url('../../public/fonts/Qualy-Bold.otf');
+}
+
+@font-face {
+    font-family: 'Prompt-Regular';
+    src: url('../../public/fonts/Prompt/Prompt-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Indosat Regular';
+    src: url('../../public/fonts/Indosat/IndosatRegular-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Indosat Medium Medium';
+    src: url('../../public/fonts/Indosat/IndosatMedium-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Indosat Bold Bold';
+    src: url('../../public/fonts/Indosat/IndosatBold-Bold.ttf');
+}
+
+.v-application {
+    font-family: 'Prompt-Regular', 'Qualy-Bold', 'sans-serif' !important;
+}
+
+h1, h2, h3 {
+    font-family: 'Qualy-Bold', 'Prompt-Regular', 'sans-serif' !important;
+}
+
+a, a:hover, a:focus {
+    display: block !important;
+    text-decoration: inherit !important;
+    color: inherit !important;
+    width: 100% !important;
+}
+
+th {
+    text-align: left;
+    font-size: 12px;
+}
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.input {
+    box-shadow: inset 1px 2px 2px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    border-radius: 8px;
+    height: 36px;
+    @apply placeholder:tw-font-indosat disabled:placeholder:tw-text-neutral-60 placeholder:tw-text-neutral-50 focus:tw-outline-none tw-text-neutral-90 tw-px-4 tw-py-2
+}
+
+.tw-button-primary{
+    @apply tw-px-4 tw-py-2 tw-flex tw-justify-center tw-items-center tw-bg-primary-main tw-text-white tw-rounded-full tw-font-indosat-medium
+}
+
+.tw-button-secondary{
+    @apply tw-px-4 tw-py-2 tw-flex tw-justify-center tw-items-center tw-text-primary-main tw-bg-white tw-border-2 tw-border-primary-main !tw-border-solid tw-rounded-full tw-font-indosat-medium
+}

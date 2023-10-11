@@ -1,0 +1,44 @@
+@startuml
+
+' hide the spot
+' hide circle
+
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+entity "Request" as request {
+  *request_id : number <<generated>>
+  --
+  email   : text
+  developer_app_name  : text
+  credential          : text 
+  service : text << gift data >>
+  type    : text << single | batch >>
+  status  : text << request | approved | reject >>
+  
+}
+
+entity "file" as file {
+  *file_id : number <<generated>>
+  --
+  file_name : text
+  status    : text <<raw|alert|valid>>
+  message   : text 
+  *request_id : number <<FK>>
+  insert_at : datetime
+  update_at : datetime
+}
+
+entity "log" as log {
+  *log_id : number <<generated>>
+  --
+  log_name : text
+  type : text <<request|response>>
+  status : text <<queue|inprogress|done>>
+  *request_id : number <<FK>>
+}
+
+request ||..o| file
+request ||..o{ log
+
+@enduml
